@@ -102,5 +102,90 @@ class Shape {
     }
 }
 class Circle extends Shape {
-    super
+    constructor(radius){
+        super()
+        this.radius = radius
+    }
+    area() {
+        return Math.PI * (this.radius * this.radius)
+    }
 }
+class Square extends Shape {
+    constructor(side){
+        super()
+        this.side = side
+    }
+    area(){
+        return this.side * this.side
+    }
+}
+// const myCircle = new Circle(3);
+// console.log(`Radius = 3`);
+// console.log(`Area = ${myCircle.area()}`);
+
+// const mySquare = new Square(4);
+// console.log(`Side = 4`);
+// console.log(`Area = ${mySquare.area()}`);
+
+// 007
+class Book{
+    constructor(title, author) {
+        this.title = title;
+        this.author = author;
+    }
+    info(){
+        return `${this.title} by ${this.author}`
+    }
+}
+// const b = new Book("The Hobbit", "Tolkin")
+// console.log(b)
+// console.log(b.info())
+
+//  008
+class Person{
+    constructor(name){
+        this.name = name
+    }
+    great(){
+        return `Hello im ${this.name}`
+    }
+}
+class Student extends Person {
+    constructor(name, school) {
+        super(name);
+        this.school = school;       
+    }
+    study(){
+        return `${this.name} is studyng at ${this.school}`
+    }
+}
+// const s = new Student("Alice", "Oxford")
+// console.log(s)
+// const s1 = new Student("Alice", "oxford")
+// console.log(s1.great())
+// console.log(s1.study());
+
+
+// 009
+class Employee{
+    #salary;
+    constructor(salary){
+        this.#salary = salary
+    }
+    getSalary(){
+        return this.#salary
+    }
+    work(){
+        return "Employee is Working"
+    }
+    
+}
+class Manager extends Employee{
+    work(){
+        return "Manager is managing"
+    }
+}
+// const e1 = new Employee("4000")
+// const e2 = e1.getSalary();
+// console.log(e2)
+// console.log(e1.work)
